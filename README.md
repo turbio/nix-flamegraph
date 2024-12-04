@@ -2,8 +2,17 @@ Semi-usable flamegraph generation for troubleshooting just _why_ your Nix code i
 
 # Usage
 
+Help page:
+
 ```
-nix run github:crabdancing/nix-flamegraph --help
+nix run github:crabdancing/nix-flamegraph -- --help
+```
+
+Process a flake (e.g.):
+
+
+```
+nix run github:crabdancing/nix-flamegraph -- -t /etc/nixos
 ```
 
 You just point it at a target, and it _hopefully_ prints out the path to an SVG. Internals are very jank. Results may vary.
