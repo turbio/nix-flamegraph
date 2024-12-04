@@ -1,4 +1,4 @@
-Semi-usable flamegraph generation for troubleshooting just _why_ your Nix code is so damn slow.
+Semi-usable flamegraph generation for troubleshooting just _why_ your Nix code is so damn slow. This mostly just shows a useful visualization of the call stack, so that you can get an impression of which function is being called recursively five thousand times. :P
 
 # Usage
 
