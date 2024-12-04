@@ -19,5 +19,9 @@ You just point it at a target, and it _hopefully_ prints out the path to an SVG.
 
 # Credits
 
-Mostly based on posts from [here](https://discourse.nixos.org/t/nix-flamegraph-or-profiling-tool/33333/11) cobbled together.
+Internal script is mostly based on posts from [here](https://discourse.nixos.org/t/nix-flamegraph-or-profiling-tool/33333/11) cobbled together.
 Yoinked `stack-collapse.py` from [here](https://raw.githubusercontent.com/NixOS/nix/master/contrib/stack-collapse.py), and made slight alterations (to pin Python version against flake deps).
+
+# License
+
+This is basically just a bunch of templates & scripts cobbled together. The parts I contributed are too trivial to really be worthy of anything other than public domain.
