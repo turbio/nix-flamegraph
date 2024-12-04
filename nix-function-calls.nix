@@ -15,6 +15,6 @@ in
   writeShellApplication {
     name = "nixFunctionCalls";
     runtimeInputs = [stackCollapse inferno python3];
-    text = builtins.readFile ./nix-function-calls.sh;
+    text = builtins.readFile ./nix-function-calls.zsh;
     checkPhase = "";
   }

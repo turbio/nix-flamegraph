@@ -1,9 +1,10 @@
 {
-  description = "Description for the project";
+  description = "Semi-usable flamegraph for analyzing Nix code performance";
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    pog.url = "github:jpetrucciani/pog";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -28,8 +29,8 @@
         # system.
 
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
-        packages.nixFunctionCalls = pkgs.callPackage ./nix-function-calls.nix {};
-        packages.default = packages.nixFunctionCalls;
+        packages.nix-flamegraph = pkgs.callPackage ./nix-flamegraph.nix {};
+        packages.default = packages.nix-flamegraph;
       };
       flake = {
         # The usual flake attributes can be defined here, including system-
