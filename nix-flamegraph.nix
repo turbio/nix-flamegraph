@@ -28,5 +28,14 @@ in
         envVar = "NIX_FLAMEGRAPH_TARGET";
         required = true;
       }
+      {
+        name = "output";
+        short = "o";
+        description = "Copy SVG to output path";
+        argument = "OUTPUT";
+        envVar = "NIX_FLAMEGRAPH_OUTPUT";
+        required = false;
+        default = "";
+      }
     ];
   }

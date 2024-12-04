@@ -17,6 +17,8 @@ nix run github:crabdancing/nix-flamegraph -- -t /etc/nixos
 
 You just point it at a target, and it _hopefully_ prints out the path to an SVG. Internals are very jank. Results may vary.
 
+Note that it prints status info via STDERR, and the actual path via STDOUT. Therefore, it should be easy to extract the path for machine usage if desired.
+
 # Credits
 
 Internal script is mostly based on posts from [here](https://discourse.nixos.org/t/nix-flamegraph-or-profiling-tool/33333/11) cobbled together.
