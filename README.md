@@ -17,7 +17,7 @@ nix run github:crabdancing/nix-flamegraph -- -t /etc/nixos
 
 You just point it at a target, and it _hopefully_ prints out the path to an SVG. Internals are very jank. Results may vary.
 
-Note that it prints status info via STDERR, and the actual path via STDOUT. Therefore, it should be easy to extract the path for machine usage if desired.
+Note that it prints status info via STDERR, and the actual path via STDOUT. Therefore, it should be easy to extract the path for machine usage if desired. Alternatively, look at the `-o` flag for telling the script to copy your `SVG` to a given path. Note that it will error if path already exists with exit code 5.
 
 # Credits
 
