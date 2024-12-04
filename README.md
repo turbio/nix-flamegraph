@@ -24,4 +24,4 @@ Yoinked `stack-collapse.py` from [here](https://raw.githubusercontent.com/NixOS/
 
 # License
 
-This is basically just a bunch of templates & scripts cobbled together. The parts I contributed are too trivial to really be worthy of anything other than public domain.
+This is basically just a bunch of templates & scripts cobbled together. The parts I contributed are too trivial to really be worthy of anything other than public domain. So, um, do whatever you want.
