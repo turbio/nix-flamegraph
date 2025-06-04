@@ -37,5 +37,14 @@ in
         required = false;
         default = "";
       }
+      {
+        name = "freq";
+        short = "F";
+        description = "Downsample to frequency (in Hz)";
+        argument = "FREQ";
+        envVar = "NIX_FLAMEGRAPH_FREQ";
+        required = false;
+        default = "";
+      }
     ];
   }

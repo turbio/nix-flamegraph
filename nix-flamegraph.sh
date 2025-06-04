@@ -15,10 +15,9 @@ nix eval --option trace-function-calls true "$target" 2> \
   >(tee "$workdir/nix-function-calls.trace" | grep -v '^function-trace ' >&2)
 
 echo "Done. Running \`stack-collapse\`..." >&2
-stack-collapse.py "$workdir/nix-function-calls.trace" > "$workdir/nix-function-calls.folded"
+SAMPLE_FREQ="$freq" stack-collapse.py "$workdir/nix-function-calls.trace" > "$workdir/nix-function-calls.folded"
 
 echo "Done. Running \`inferno-flamegraph\`..." >&2
-
 
 inferno-flamegraph "$workdir/nix-function-calls.folded" > "$output"
 

@@ -11,9 +11,17 @@
 import sys
 from pprint import pprint
 import fileinput
+import os
 
 stack = []
 timestack = []
+
+if "SAMPLE_FREQ" in os.environ and os.environ["SAMPLE_FREQ"] != "":
+    sample_period_ns = 1_000_000_000 / int(os.environ["SAMPLE_FREQ"])
+else:
+    sample_period_ns = 0
+
+last_sample_ns = 0
 
 for line in fileinput.input():
     components = line.strip().split(" ", 2)
@@ -31,7 +39,11 @@ for line in fileinput.input():
         stack.append(loc)
         timestack.append(time)
     elif direction == "exited":
-        dur = time - timestack.pop()
-        vst = ";".join(stack)
-        print(f"{vst} {dur}")
+        if time >= last_sample_ns + sample_period_ns:
+            last_sample_ns = time
+
+            dur = time - timestack.pop()
+            vst = ";".join(stack)
+            print(f"{vst} {dur}")
+
         stack.pop()
